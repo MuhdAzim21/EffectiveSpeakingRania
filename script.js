@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
   document.body.classList.remove('loading');
 });
-
   // =========================
   // 1️⃣ AOS (SAFE)
   // =========================

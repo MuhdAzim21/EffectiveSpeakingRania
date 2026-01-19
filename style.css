@@ -9,6 +9,11 @@ img, video {
   transition: opacity .4s ease;
 }
 
+img.nav-icon {
+  opacity: 1 !important;
+}
+
+
 img.loaded,
 video.loaded {
   opacity: 1;

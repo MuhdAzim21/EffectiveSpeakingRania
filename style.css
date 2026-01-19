@@ -1,0 +1,322 @@
+/* ===== GLOBAL ===== */
+body {
+  scroll-behavior: smooth;
+  overflow: auto;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+.lock-scroll {
+  overflow: hidden;
+}
+
+/* FULL HARD SCROLL LOCK */
+body.lock-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Full-page section */
+.full-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+/* Ensure Bootstrap containers stretch */
+.full-page .container-fluid,
+.full-page .row {
+  height: 100%;
+  padding-top: 80px !important;
+}
+
+/* Image control */
+.content-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: cover;
+  width: 100%;
+}
+
+.content-image.sh-br {
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+/* =========================
+   Video control (NEW)
+========================= */
+.content-video {
+  width: 800px; /* your custom width */
+  height: 450px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Ensure the section is the positioning context */
+#intro1 {
+  position: relative; /* needed for absolute background image */
+  overflow: hidden;   /* optional, prevents overflow of bg image */
+}
+
+#intro1 h2, #intro2 h2 {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: #ff007c;
+}
+
+/* Ensure the section is the positioning context */
+#intro2 {
+  position: relative; /* needed for absolute background image */
+  overflow: hidden;   /* optional, prevents overflow of bg image */
+}
+
+/* Fixed background image for the section */
+.content-imagebg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* fills section without stretching */
+  z-index: -1;        /* behind all content */
+}
+
+
+
+.content-video {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.content-video.playing {
+  opacity: 1;
+}
+
+/* ===== NAVBAR ===== */
+
+.nav-icon {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.nav-icon:hover {
+  transform: scale(1.15);
+}
+
+/* ===== FULL SCREEN SECTION ===== */
+#home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== HERO SECTION (IMAGE IN HTML) ===== */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  color: #ffedfa;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+
+#home h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+/* ===== CONTENT SECTIONS ===== */
+
+.content-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ===== CONCLUSION ===== */
+#conclusion {
+  background: #111;
+  color: #fff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+
+/* Hide scrollbar visually on entire page */
+html, body {
+  overflow: auto;
+}
+
+/* Chrome, Edge, Safari */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* IE / old Edge */
+html {
+  -ms-overflow-style: none;
+}
+
+/* ===== NAV FONT ===== */
+p.navfont {
+    font-family: Courier, monospace;
+    color:rgb(218, 210, 92)
+}
+
+p.navfont2 {
+    font-family: Courier, monospace;
+    color:#f11d70
+}
+
+p.navfont3 {
+    font-family: Courier, monospace;
+    color:#1de6f1
+}
+
+/* ===== DRAG STAGE ===== */
+.drag-stage {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drag-stage2 {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Bowl */
+.bowl-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#bowl {
+  width: 220px;
+  pointer-events: none;
+}
+
+/* Default bowl (PNG) */
+img#bowl2 {
+  width: 240px;
+  height: auto;
+}
+
+/* Mixing animation (GIF) */
+#bowl2.bowl2class {
+  width: 900px;   /* smaller GIF */
+  height: auto;
+}
+
+#bowl.bowlclass {
+  width: 200px;   /* smaller GIF */
+  height: auto;
+  top: 20%;
+}
+
+/* Optional smooth animation */
+#bowl2, #bowl {
+  transition: width 0.4s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* Food items */
+.food {
+  position: absolute;
+  width: 180px;
+  cursor: grab;
+  user-select: none;
+}
+
+/* Scatter positions */
+.food:nth-child(2) { top: 70% !important; left: 35% !important;}
+.food:nth-child(3) { top: 50% !important; right: 20% !important;}
+.food:nth-child(4) { bottom: 27% !important; left: 20% !important;}
+
+/* Food2 items */
+.food2 {
+  position: absolute;
+  width: 120px;
+  cursor: grab;
+  user-select: none;
+}
+
+/* Scatter positions */
+.food2:nth-child(5) { top: 70% !important; left: 35% !important; width: 130px !important;}
+.food2:nth-child(3) { top: 50% !important; right: 25% !important; width: 130px !important;}
+.food2:nth-child(4) { bottom: 20% !important; left: 20% !important; width: 130px !important;}
+
+
+/* Hide next sections initially */
+.hidden-section {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+  display: none;
+}
+
+.hidden-section.show {
+  opacity: 1;
+  pointer-events: auto;
+  display: block;
+}
+
+.content-imagebg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+

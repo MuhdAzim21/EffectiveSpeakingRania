@@ -16,6 +16,20 @@ if (video) {
     }
   });
 }
+
+document.querySelectorAll('img, video').forEach(el => {
+  el.addEventListener('load', () => el.classList.add('loaded'));
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('loading');
+});
+
+window.addEventListener('load', () => {
+  document.body.classList.remove('loading');
+});
+
   // =========================
   // 1️⃣ AOS (SAFE)
   // =========================
@@ -142,7 +156,12 @@ window.addEventListener('scroll', () => {
         const lockedContent = document.getElementById('lockedContent');
 
         if (bowl) {
-          bowl.src = 'img/point1/bowlmix.gif';
+          const img = new Image();
+          img.src = 'img/point1/bowlmix.gif';
+
+          img.decode().then(() => {
+            bowl.src = img.src;
+          });
           bowl.classList.add('bowlclass');
         }
 
@@ -161,7 +180,12 @@ window.addEventListener('scroll', () => {
       onComplete: () => {
         const bowl = document.getElementById('bowl2');
         if (bowl) {
-          bowl.src = 'img/intro/introgif.gif';
+          const img = new Image();
+          img.src = 'img/intro/introgif.gif';
+
+          img.decode().then(() => {
+            bowl.src = img.src;
+          });
           bowl.classList.add('bowl2class');
         }
       }

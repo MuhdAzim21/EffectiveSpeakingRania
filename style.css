@@ -4,6 +4,30 @@ body {
   overflow: auto;
 }
 
+img, video {
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
+img.loaded,
+video.loaded {
+  opacity: 1;
+}
+
+.content-image,
+.bowlclass,
+.bowl2class {
+  will-change: transform, opacity;
+}
+
+body.loading * {
+  pointer-events: none;
+}
+
+body.loading {
+  cursor: progress;
+}
+
 html, body {
   scroll-behavior: smooth;
 }
